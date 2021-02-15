@@ -1,6 +1,6 @@
 # React25
-React25
+### All materials you can find in different branch
 
-All materials you can find in different branch
-Example
-git checkout lesson_01
+#### Example
+
+`git checkout lesson_01`
