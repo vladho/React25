@@ -1,11 +1,11 @@
 import React from "react";
 
-const SingleFilter = ({some}) => {
+const SingleFilter = ({size}) => {
   // const {size} = props;
   return (
     <label>
-      <input type="checkbox" value={some} />
-      <span className="checkmark">{some}</span>
+      <input type="checkbox" value={size} />
+      <span className="checkmark">{size}</span>
     </label>
   );
 };

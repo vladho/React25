@@ -10,7 +10,7 @@ const FilterBlock = () => {
     <div className="filters">
       <h4 className="title">Sizes:</h4>
       <div className="available-size">
-        {sizes.map((el) => <SingleFilter key={el} some={el}/>)}
+        {sizes.map((el) => <SingleFilter key={el} size={el}/>)}
         {/* <label>
           <input type="checkbox" value="XS" />
           <span className="checkmark">
