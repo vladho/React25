@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
+
 
 const SingleFilter = ({size}) => {
   // const {size} = props;
@@ -11,3 +14,8 @@ const SingleFilter = ({size}) => {
 };
 
 export default SingleFilter;
+
+
+SingleFilter.propTypes = {
+  size: PropTypes.string,
+};

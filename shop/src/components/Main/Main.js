@@ -7,7 +7,9 @@ import "./Main.css";
 const Main = () => {
   return (
     <main className="main">
-      <FilterBlock />
+      <FilterBlock>
+        <Section />
+      </FilterBlock>
       <CardCollection />
     </main>
   );

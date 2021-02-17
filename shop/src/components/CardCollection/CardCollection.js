@@ -22,9 +22,19 @@ const CardCollection = () => {
       </div>
       {/* <!-- cards header end  -->
     <!-- card start  --> */}
-      <div className='card-block'>
+      <div className="card-block">
         {products.map((el) => (
-          <SingleCard key={el.id} product={el}/>
+          <SingleCard
+            key={el.id}
+            {...el}
+            // style={el.style}
+            // img={el.img}
+            // currency={el.currencyFormat}
+            // price={el.price}
+            // title={el.title}
+            // shipping={el.isFreeShipping}
+            // type="primary"
+          />
         ))}
         {/* <!-- card end  --> */}
       </div>

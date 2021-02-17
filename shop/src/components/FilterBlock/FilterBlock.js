@@ -4,8 +4,8 @@ import SingleFilter from "../SingleFilter/SingleFilter";
 
 import "./FilterBlock.css";
 
-const FilterBlock = () => {
-  console.log(sizes);
+const FilterBlock = (props) => {
+  console.log(props);
   return (
     <div className="filters">
       <h4 className="title">Sizes:</h4>
@@ -30,6 +30,7 @@ const FilterBlock = () => {
           </span></label
         > */}
       </div>
+      {props.children}
     </div>
   );
 };
