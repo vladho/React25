@@ -9,7 +9,7 @@ const App = () => {
     <>
       {/* <Header />
       <Main /> */}
-      <Counter />
+      <Counter title="We test our counter"/>
     </>
   );
 };
