@@ -9,14 +9,7 @@ import "./Main.css";
 const Main = () => {
   return (
     <main className="main">
-      <FilterBlock>
-        <Section />
-        <Button variant="contained">Default</Button>
-      <Button variant="contained" color="secondary">
-        Primary
-      </Button>
-      </FilterBlock>
-      
+      <FilterBlock />
       <CardCollection />
     </main>
   );
