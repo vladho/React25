@@ -11,6 +11,8 @@ const SingleCard = ({
   img,
   isFreeShipping,
   type,
+  addToCart,
+  id
 }) => {
   // const { style, price, title, currencyFormat, img, isFreeShipping, type } = props;
   // console.log("props", props);
@@ -28,7 +30,7 @@ const SingleCard = ({
           {currencyFormat} {price}
         </div>
       </div>
-      <div className={type}>Add to cart</div>
+      <div onClick={()=>addToCart(id)} className={type}>Add to cart</div>
       {/* {type && <div className={type}>Add to cart</div>} */}
       {/* <div className="card-item__buy-btn">Add to cart</div> */}
     </CardItem>

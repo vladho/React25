@@ -3,7 +3,7 @@ import products from "../../db/product.json";
 import SingleCard from "../SingleCard/SingleCard";
 import "./CardCollection.css";
 
-const CardCollection = () => {
+const CardCollection = ({addToCart}) => {
   return (
     <div className="card-container">
       {/* <!-- cards header start --> */}
@@ -27,6 +27,7 @@ const CardCollection = () => {
           <SingleCard
             key={el.id}
             {...el}
+            addToCart={addToCart}
             // style={el.style}
             // img={el.img}
             // currency={el.currencyFormat}

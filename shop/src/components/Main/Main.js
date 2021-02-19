@@ -6,11 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import "./Main.css";
 
-const Main = () => {
+const Main = ({addToCart}) => {
   return (
     <main className="main">
       <FilterBlock />
-      <CardCollection />
+      <CardCollection addToCart={addToCart}/>
     </main>
   );
 };
