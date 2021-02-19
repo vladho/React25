@@ -3,13 +3,15 @@ import Counter from "./components/Counter/Counter";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Section from "./components/Section/Section";
+import Cart from "./components/Cart/Cart"
 
 const App = () => {
   return (
     <>
-      {/* <Header />
-      <Main /> */}
-      <Counter title="We test our counter"/>
+      <Header />
+      <Main />
+      <Cart />
+      {/* <Counter title="We test our counter"/> */}
     </>
   );
 };
