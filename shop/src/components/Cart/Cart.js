@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
 import CartItem from "../CartItem/CartItem";
 
-const Cart = ({ statusCart, cartToogle, order, total,removeFromCart }) => {
-
+const Cart = ({ order, total, removeFromCart }) => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const cartToogle = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
-    <div
-      
-      className={statusCart ? "float-cart float-cart--open" : "float-cart"}
-    >
+    <div className={isCartOpen ? "float-cart float-cart--open" : "float-cart"}>
       {/* <!-- cart icon start  --> */}
-      <span onClick={cartToogle}
-       className="bag bag--float-cart-closed">
+      <span onClick={cartToogle} className="bag bag--float-cart-closed">
         <span className="bag__quantity">{order.length}</span>
       </span>
       {/* <!-- cart icon end --> */}
@@ -24,7 +23,9 @@ const Cart = ({ statusCart, cartToogle, order, total,removeFromCart }) => {
           <span className="float-cart__header-title">Cart </span>
         </div>
         <div className="float-cart__card-container">
-          {order.map(el=> <CartItem key={el.id} {...el} removeFromCart={removeFromCart}/>)}
+          {order.map((el) => (
+            <CartItem key={el.id} {...el} removeFromCart={removeFromCart} />
+          ))}
         </div>
         <div className="float-cart__footer">
           <div className="total">
