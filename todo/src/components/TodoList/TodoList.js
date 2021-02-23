@@ -5,6 +5,10 @@ import "./TodoList.css";
 
 
 class TodoList extends Component {
+
+  state = {
+    todoList: []
+  }
   
   render(){
     return(
