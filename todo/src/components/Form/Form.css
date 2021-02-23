@@ -38,6 +38,17 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
+.NewTodoForm__submit-inactive {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  opacity: 0.3;
+  margin-left: 16px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 .NewTodoForm__submit:hover {
   background-color: #fff;
   color: #ff6b6b;
