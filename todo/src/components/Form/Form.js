@@ -1,12 +1,21 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./Form.css";
 
 class Form extends Component {
-  state = {
+  initialState = {
     title: "",
     author: "",
     priority: "Low",
     agree: false,
+  };
+
+  state = {
+    // title: "",
+    // author: "",
+    // priority: "Low",
+    // agree: false,
+    ...this.initialState,
   };
 
   inputHeandler = ({ target }) => {
@@ -16,8 +25,24 @@ class Form extends Component {
     // const name = input.name;
     const { value, name, type } = target;
     this.setState({
-      [name]: type === 'checkbox' ? !this.state.agree : value,
+      [name]: type === "checkbox" ? !this.state.agree : value,
     });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.agree) {
+      const singleTask = {
+        title: this.state.title,
+        author: this.state.author,
+        priority: this.state.priority,
+        status: false,
+        id: uuidv4(),
+      };
+      console.log(singleTask);
+      this.props.addToList(singleTask);
+      this.setState({ ...this.initialState });
+    }
   };
 
   // titleInputHeandler = ({ target }) => {
@@ -39,7 +64,11 @@ class Form extends Component {
   render() {
     const { title, author, priority, agree } = this.state;
     return (
-      <form className="NewTodoForm" autoComplete="off">
+      <form
+        onSubmit={this.handleSubmit}
+        className="NewTodoForm"
+        autoComplete="off"
+      >
         <input
           onChange={this.inputHeandler}
           className="NewTodoForm__name"
@@ -79,7 +108,14 @@ class Form extends Component {
           />
           Agree with our policy
         </label>
-        <button className="NewTodoForm__submit" type="submit">
+
+        <button
+          disabled={!agree}
+          className={
+            agree ? "NewTodoForm__submit" : "NewTodoForm__submit-inactive"
+          }
+          type="submit"
+        >
           Add Todo
         </button>
       </form>
